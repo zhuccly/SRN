@@ -29,14 +29,14 @@ Currently the TensorFlow implementation does not contain tracking model we did i
     source activate environment-name
     
     # Start training
-    python mdm_train.py --datasets='databases/lfpw/trainset/*.png:databases/afw/*.jpg:databases/helen/trainset/*.jpg'
+    python train.py --datasets='databases/lfpw/trainset/*.png:databases/afw/*.jpg:databases/helen/trainset/*.jpg'
     
     # Track the train process and evaluate the current checkpoint against the validation set
-    python mdm_eval.py --dataset_path="./databases/ibug/*.jpg" --num_examples=135 --eval_dir=ckpt/eval_ibug  --device='/cpu:0' --checkpoint_dir=$PWD/ckpt/train
+    python eval.py --dataset_path="./databases/ibug/*.jpg" --num_examples=135 --eval_dir=ckpt/eval_ibug  --device='/cpu:0' --checkpoint_dir=$PWD/ckpt/train
     
-    python mdm_eval.py --dataset_path="./databases/lfpw/testset/*.png" --num_examples=300 --eval_dir=ckpt/eval_lfpw  --device='/cpu:0' --checkpoint_dir=$PWD/ckpt/train
+    python eval.py --dataset_path="./databases/lfpw/testset/*.png" --num_examples=300 --eval_dir=ckpt/eval_lfpw  --device='/cpu:0' --checkpoint_dir=$PWD/ckpt/train
     
-    python mdm_eval.py --dataset_path="./databases/helen/testset/*.jpg" --num_examples=330 --eval_dir=ckpt/eval_helen  --device='/cpu:0' --checkpoint_dir=$PWD/ckpt/train
+    python eval.py --dataset_path="./databases/helen/testset/*.jpg" --num_examples=330 --eval_dir=ckpt/eval_helen  --device='/cpu:0' --checkpoint_dir=$PWD/ckpt/train
     
     # Run tensorboard to visualise the results
     tensorboard --logdir==$PWD/ckpt

@@ -41,5 +41,5 @@ Currently the TensorFlow implementation does not contain tracking model we did i
     # Run tensorboard to visualise the results
     tensorboard --logdir==$PWD/ckpt
 ```
-The realization of some functions refers to the MDM project (https://github.com/trigeorgis/mdm).
+The implementation of some functions refers to the MDM project (https://github.com/trigeorgis/mdm).
 

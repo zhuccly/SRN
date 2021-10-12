@@ -48,7 +48,7 @@ tf.app.flags.DEFINE_string('dataset_path', 'databases/ibug/*.jpg',
 tf.app.flags.DEFINE_string('device', '/cpu:0', 'the device to eval on.')
 
 
-def plot_ced(errors, method_names=['MDM']):
+def plot_ced(errors, method_names=['SRN']):
     from matplotlib import pyplot as plt
     from menpofit.visualize import plot_cumulative_error_distribution
     import numpy as np
@@ -146,8 +146,8 @@ def _eval_once(saver, summary_writer, rmse_op, summary_op):
 
       summary = tf.Summary()
       summary.ParseFromString(sess.run(summary_op))
-      summary.value.add(tag='AUC @ 0.08', simple_value=float(fr_at_1))
-      summary.value.add(tag='AUC @ 0.05', simple_value=float(auc_at_05))
+      summary.value.add(tag='FR @ 0.08', simple_value=float(fr_at_1))
+      summary.value.add(tag='FR @ 0.05', simple_value=float(auc_at_05))
       summary.value.add(tag='Mean RMSE', simple_value=float(mean_rmse))
       summary_writer.add_summary(ced_plot, global_step)
       summary_writer.add_summary(summary, global_step)

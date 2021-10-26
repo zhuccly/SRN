@@ -1,6 +1,6 @@
 # SRN
 
-A Tensorflow implementation of the PAttern Recognition paper: Reasoning structural relation for occlusion-robust facial landmark localization.
+A Tensorflow implementation of the paper: Reasoning structural relation for occlusion-robust facial landmark localization.
 
 
 # Installation Instructions
